@@ -20,7 +20,7 @@
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
-#include <list>
+#include <deque>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -1052,7 +1052,7 @@ class ModuleField {
   ModuleFieldType type_;
 };
 
-using ModuleFieldList = std::list<std::unique_ptr<ModuleField>>;
+using ModuleFieldList = std::deque<std::unique_ptr<ModuleField>>;
 
 template <ModuleFieldType TypeEnum>
 class ModuleFieldMixin : public ModuleField {

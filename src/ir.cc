@@ -543,9 +543,8 @@ void Module::AppendField(std::unique_ptr<ModuleField> field) {
 }
 
 void Module::AppendFields(ModuleFieldList* fields) {
-  while (!fields->empty()) {
-    AppendField(std::move(fields->front()));
-    fields->pop_front();
+  for (auto& field : *fields) {
+    AppendField(std::move(field));
   }
 }
 
